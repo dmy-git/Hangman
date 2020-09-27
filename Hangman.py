@@ -4,6 +4,7 @@ import random
 def read_words(filename):
     file = open(filename)
     words = file.readlines()
+    file.close()
     return words
 
 
