@@ -4,6 +4,6 @@ python:
 install:
   - pip install codecov
 script:
-  - ./setup.py test
+  - py.test TestHangman.py
 after_success:
   - codecov
