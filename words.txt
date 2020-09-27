@@ -1,0 +1,5 @@
+hangman
+agile
+method
+category
+kotik
