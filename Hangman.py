@@ -8,13 +8,17 @@ def read_words(filename):
 
 
 class Hangman:
-    standart_filename = "words.txt"
+    std_filename = "words.txt"
     attempts = 5
     mistakes = 0
 
-    def __init__(self, filename=standart_filename, word=None):
+    def __init__(self, filename=std_filename, word=None):
         if filename is not None:
             self.words = read_words(filename)
+        if filename is None and word is None:
+            self.words = read_words(self.std_filename)
+        if filename is None and word is not None:
+            self.words = [word]
 
         self.word = self.words[random.randrange(0, len(self.words), 1)]\
             .strip().lower()
@@ -60,7 +64,3 @@ class Hangman:
 
     def is_word_opened(self):
         return self.masked_word == self.word
-
-
-game = Hangman()
-game.play()
